@@ -287,7 +287,8 @@
          fft_overlap: {{ file_params.fft_overlap }},
          spec_height: {{ file_params.spec_height }},
          spec_width: {{ file_params.spec_width }},
-         duration_listen: {{file_params.duration_listen}} // firefox has a problem reading audio file duration
+         duration_listen: {{file_params.duration_listen}}, // firefox has a problem reading audio file duration
+         expansion_factor: {{ file_params.expansion_factor }}
     };
 
     spectrogram_params = {

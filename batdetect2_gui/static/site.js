@@ -220,7 +220,8 @@ var app = function () {
             // timeupdate audio event happens all the time
             // update the time display and the horizontal scroll based on the audio time
             my_audio.addEventListener('timeupdate', function() {
-                $("#current_time").html((my_audio.currentTime).toFixed(3) + ' secs');
+                var time_exp = file_params.time_expansion;
+                $("#current_time").html((my_audio.currentTime / time_exp).toFixed(3) + ' secs');
                 //var fraction_complete = my_audio.currentTime / my_audio.duration;
                 var fraction_complete = my_audio.currentTime / file_params.duration_listen;
                 var percent_complete = 100*Number((fraction_complete).toFixed(5));

@@ -582,7 +582,7 @@ def compute_data(annotation, audio_dir):
     im_data, im_shape = gd.compute_image_data(
         audio_raw, sampling_rate, get_spectrogram_params()
     )
-    duration_listen = duration * config.PARAMS["playback_time_expansion"]
+    duration_listen = duration * tm_exp_play
 
     # if the duration has not been provided with the file - then set it
     if annotation["duration"] == -1:
@@ -603,6 +603,7 @@ def compute_data(annotation, audio_dir):
         "duration": duration,
         "sampling_rate": sampling_rate,
         "duration_listen": duration_listen,
+        "expansion_factor": tm_exp_play,
     }
 
     return file_params, im_data, aud_data
